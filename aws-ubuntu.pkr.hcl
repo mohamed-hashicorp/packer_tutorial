@@ -38,7 +38,9 @@ build {
       "sleep 30",
       "sudo apt-get update",
       "sudo apt-get install -y nginx",
+      "echo \"<h1>Hello from Packer-built Nginx</h1>\" | sudo tee /var/www/html/index.html",
       "sudo systemctl start nginx",
+      "sudo systemctl enable nginx",
     ]
   }
 }
